@@ -1,9 +1,12 @@
 # Material Icon Font
-Found some time to [scrape](https://github.com/jamesplease/material-design-icons) (thanks @jamesplease) and build the baseline, outline, round, and sharp [material icon families](https://material.io/tools/icons/?style=baseline) all into font ligatures. There's probably some bugs but feel free to try!
+Found some time to [scrape](https://github.com/jamesplease/material-design-icons) (thanks @jamesplease) and build the baseline, outline, round, and sharp [material icon families](https://material.io/tools/icons/?style=baseline) all into font ligatures. You can find the ligature reference gallery [here](https://peter.ng/material-icons). There's probably some bugs but feel free to try!
 
 ![demo mov](https://user-images.githubusercontent.com/1144288/47622880-8df83080-dac7-11e8-9fb4-837b4eeba369.gif)
 
 ![material-icon-gen-doc mov](https://user-images.githubusercontent.com/1144288/47612293-03ff8780-da35-11e8-9adb-7067098225b6.gif)
+
+# reference
+[icon ligature reference gallery](https://peter.ng/material-icons)
 
 # setup
 ## install node
