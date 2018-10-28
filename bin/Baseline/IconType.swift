@@ -1,5 +1,5 @@
 //
-/// Font generated on 10/27/2018 9:56pm
+/// Font generated on 10/27/2018 10:36pm
 public enum IconType: String {
     case 360
     case 3d_rotation

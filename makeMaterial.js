@@ -299,10 +299,11 @@ function compare(a, b) {
 writeFontStream = function(name, svgData) {
 	const fontStream = new SVGIcons2SVGFontStream({
 		fontName: json.fontName,
-		// normalize: true,
-		// round: 1e-4,
+		normalize: true,
+		// round: 0,
 		fontId: json.fontId,
 		fontStyle: json.fontStyle,
+		// centerHorizontally: true,
 		// fixedWidth: true,
 		fontHeight: 1000 + (json.fontBoxSize - 1000 % json.fontBoxSize) //this needs to be > 1000 but divisible by 24
 	});
