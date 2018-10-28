@@ -242,9 +242,9 @@ function errorHandler(err, data) {
 }
 
 function writeJSON(data) {
-	// var jsonString = JSON.stringify(data);
-	var jsonString = data;
-	fs.writeFile(json.binDir + '/' + json.fontName + '.json', jsonString, 'utf8');
+	var jsonString = JSON.stringify(data);
+	// var jsonString = data;
+	fs.writeFile(json.binDir + '/' + json.fontFileName + '.json', jsonString, 'utf8');
 }
 
 function writeSwift(data) {
@@ -261,7 +261,7 @@ function writeSwift(data) {
 
 	jsonString = jsonString.concat('\n' + "}" + '\n');
 
-	fs.writeFile(json.binDir + '/' + "IconType" + '.swift', jsonString, 'utf8');
+	fs.writeFile(json.binDir + '/' + json.fontFileName + '.swift', jsonString, 'utf8');
 }
 
 function getDateTime() {
@@ -308,7 +308,7 @@ writeFontStream = function(name, svgData) {
 		fontHeight: 1000 + (json.fontBoxSize - 1000 % json.fontBoxSize) //this needs to be > 1000 but divisible by 24
 	});
 
-	fontStream.pipe(fs.createWriteStream(json.binDir + '/' + json.fontName + '.svg'))
+	fontStream.pipe(fs.createWriteStream(json.binDir + '/' + json.fontFileName + '.svg'))
 		.on('finish',function() {
 			addMissingGlyph();
 			writeTTF();
@@ -331,7 +331,7 @@ writeFontStream = function(name, svgData) {
 }
 
 function addMissingGlyph() {	
-	var $ = cheerio.load(fs.readFileSync(json.binDir + '/' + json.fontName + '.svg', 'utf8'), {
+	var $ = cheerio.load(fs.readFileSync(json.binDir + '/' + json.fontFileName + '.svg', 'utf8'), {
 		xmlMode: true,
 		lowerCaseTags: false
 	});
@@ -339,12 +339,12 @@ function addMissingGlyph() {
 	$("svg missing-glyph").attr("d", 'M588 483L588 199.5L672 126L672 42L504 84L336 42L336 126L420 199.5L420 483L84 399L84 504L420 672L420 882C420 928.204116 457.79958 966 504 966C550.1999999999999 966 588 928.204116 588 882L588 672L924 504L924 399L588 483z');
 	$("svg missing-glyph").attr("horiz-adv-x", 1000 + (json.fontBoxSize - 1000 % json.fontBoxSize));
 
-	fs.writeFileSync(json.binDir + '/' + json.fontName + '.svg', $.xml());
+	fs.writeFileSync(json.binDir + '/' + json.fontFileName + '.svg', $.xml());
 	// console.log($.html());
 }
 
 function writeTTF() {
-	var ttf = svg2ttf(fs.readFileSync(json.binDir + '/' + json.fontName + '.svg', 'utf8'), {});
+	var ttf = svg2ttf(fs.readFileSync(json.binDir + '/' + json.fontFileName + '.svg', 'utf8'), {});
 	fs.writeFileSync(json.binDir + '/' + json.fontFileName + '.ttf', new Buffer(ttf.buffer));
 	createGallery('./lib/gallery_template.html');
 	console.log('ttf successfully created!')
@@ -384,7 +384,7 @@ function createGallery(sourceURL) {
 			);
 		});
 
-		fs.writeFileSync(json.binDir + '/' + 'font.html', $.html(), 'utf8');
+		fs.writeFileSync(json.binDir + '/' + 'index.html', $.html(), 'utf8');
 	});
 }
 
