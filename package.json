@@ -1,0 +1,25 @@
+{
+  "name": "svgfontcreator",
+  "version": "1.0.0",
+  "description": "turn svgs into a ttf",
+  "main": "svgToFontScraper.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "file-system": "^2.2.2",
+    "svg2ttf": "^4.1.0",
+    "svgicons2svgfont": "^9.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//petergng/svgFontCreator.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

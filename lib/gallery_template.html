@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>icon font that you can specify with ligatures</title>
+
+<script>
+	function copyToClipboard(element) {
+		var $temp = $("<input>");
+		$("body").append($temp);
+		$temp.val($(element).text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+<style>
+	.galleryContainer {
+		width: 16vw;
+		height: 16vw;
+		display: block;
+		float: left;
+		cursor: pointer;
+	}
+
+	icon {
+		font-size: 24pt;
+		transition: all .5s;
+		display: table;
+		margin: 0 auto;
+	}
+
+	icon:hover {
+		color: blue;
+		transform: scale(2);
+	}
+
+	h5 {
+		font-size: 8pt;
+	}
+	.center {
+		text-align: center;
+		display: block;
+	}
+</style>
+
+</head>
+<body>
+<!-- <button onclick="copyToClipboard('#p1')">Copy TEXT 1</button> -->
+
+	<!-- width: 16vw; height: 16vw; -->
+	<section id="gallery" class="flex flex-wrap py4" style="margin: 6vw 6vw">
+	</section>
+
+</body>
+</html>
