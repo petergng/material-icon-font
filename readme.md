@@ -1,4 +1,9 @@
-# install
+# Material Icon Font
+Found some time to [scrape](https://github.com/jamesplease/material-design-icons) (thanks @jamesplease) and build the baseline, outline, round, and sharp [material icon families](https://material.io/tools/icons/?style=baseline) all into font ligatures. There's probably some bugs but feel free to try!
+
+![alt text](https://user-images.githubusercontent.com/1144288/47612293-03ff8780-da35-11e8-9adb-7067098225b6.gif)
+
+# setup
 ## install node
 https://nodejs.org/en/
 
