@@ -1,5 +1,5 @@
 {
-  "name": "materialIconFont",
+  "name": "material-icon-font",
   "version": "0.1.0",
   "description": "create Truetype fonts of Material Design SVGs",
   "main": "makeMaterial.js",
