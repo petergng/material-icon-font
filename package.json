@@ -1,8 +1,8 @@
 {
-  "name": "svgfontcreator",
-  "version": "1.0.0",
-  "description": "turn svgs into a ttf",
-  "main": "svgToFontScraper.js",
+  "name": "material-icon-font",
+  "version": "0.1.0",
+  "description": "create Truetype fonts of Material Design SVGs",
+  "main": "makeMaterial.js",
   "directories": {
     "lib": "lib"
   },
@@ -10,7 +10,10 @@
     "cheerio": "^1.0.0-rc.2",
     "file-system": "^2.2.2",
     "svg2ttf": "^4.1.0",
-    "svgicons2svgfont": "^9.0.3"
+    "svgicons2svgfont": "^9.0.4",
+    "ttf2eot": "^2.0.0",
+    "ttf2woff": "^2.0.1",
+    "ttf2woff2": "^2.0.3"
   },
   "devDependencies": {},
   "scripts": {

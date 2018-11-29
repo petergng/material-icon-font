@@ -21,3 +21,18 @@ https://nodejs.org/en/
 3. open makeMaterial and uncomment out the style variable you want to generate(i know this sucks for now)
 4. `node makeMaterial.js` in the terminal
 4. Bin will hold all generated assets
+
+# using the font with [Angular Material <mat-icon>](https://material.angular.io/components/icon/overview)
+1. Install package via npm `npm i --save https://github.com/petergng/materialIconFont.git`
+2. Import font css in your projects style.css `@import '~material-icon-font/dist/Material-Icons.css';`
+3. Define which font family you want to use in the <mat-icon> 
+    - to use it globally edit style.css 
+    ```
+    .material-icons {
+         font-family: 'Material Icons Outline'
+    }
+    ```
+    - to use it for one element only use style or class attribute
+    ```
+    <mat-icon style="font-family: 'Material Icons Sharp'">fastfood</mat-icon>
+    ```

@@ -1,6 +1,11 @@
+#!/usr/bin/env node
+
 var fs = require('fs');
 var cheerio = require("cheerio");
 var svg2ttf = require('svg2ttf');
+var ttf2woff2 = require('ttf2woff2');
+var ttf2woff = require('ttf2woff');
+var ttf2eot = require('ttf2eot');
 var SVGIcons2SVGFontStream = require('svgicons2svgfont');
 
 var assetDir = "./res/material"
@@ -244,7 +249,7 @@ function errorHandler(err, data) {
 function writeJSON(data) {
 	var jsonString = JSON.stringify(data);
 	// var jsonString = data;
-	fs.writeFile(json.binDir + '/' + json.fontFileName + '.json', jsonString, 'utf8');
+	fs.writeFileSync(json.binDir + '/' + json.fontFileName + '.json', jsonString, 'utf8');
 }
 
 function writeSwift(data) {
@@ -261,7 +266,7 @@ function writeSwift(data) {
 
 	jsonString = jsonString.concat('\n' + "}" + '\n');
 
-	fs.writeFile(json.binDir + '/' + json.fontFileName + '.swift', jsonString, 'utf8');
+	fs.writeFileSync(json.binDir + '/' + json.fontFileName + '.swift', jsonString, 'utf8');
 }
 
 function getDateTime() {
@@ -312,6 +317,9 @@ writeFontStream = function(name, svgData) {
 		.on('finish',function() {
 			addMissingGlyph();
 			writeTTF();
+            writeWOFF();
+			writeWOFF2();
+			writeEOT();
 		})
 		.on('error',function(err) {
 			console.log(err);
@@ -345,9 +353,33 @@ function addMissingGlyph() {
 
 function writeTTF() {
 	var ttf = svg2ttf(fs.readFileSync(json.binDir + '/' + json.fontFileName + '.svg', 'utf8'), {});
-	fs.writeFileSync(json.binDir + '/' + json.fontFileName + '.ttf', new Buffer(ttf.buffer));
+	fs.writeFileSync(json.binDir + '/' + json.fontFileName + '.ttf', Buffer.from(ttf.buffer));
 	createGallery('./lib/gallery_template.html');
 	console.log('ttf successfully created!')
+}
+
+function writeWOFF() {
+
+    var input = fs.readFileSync(json.binDir + '/' + json.fontFileName + '.ttf');
+
+    fs.writeFileSync(json.binDir + '/' + json.fontFileName + '.woff', ttf2woff(input));
+    console.log('woff successfully created!')
+}
+
+function writeWOFF2() {
+
+	var input = fs.readFileSync(json.binDir + '/' + json.fontFileName + '.ttf');
+
+	fs.writeFileSync(json.binDir + '/' + json.fontFileName + '.woff2', ttf2woff2(input));
+	console.log('woff2 successfully created!')
+}
+
+function writeEOT() {
+
+	var input = fs.readFileSync(json.binDir + '/' + json.fontFileName + '.ttf');
+
+	fs.writeFileSync(json.binDir + '/' + json.fontFileName + '.eot', ttf2eot(input));
+	console.log('eot successfully created!')
 }
 
 function createGallery(sourceURL) {

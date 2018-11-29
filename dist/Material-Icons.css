@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Material Icons Outline';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../bin/Outline/Material-Icons-Outline.eot); /* For IE6-8 */
+    src: local('MaterialIcons-Outline'),
+    url(../bin/Outline/Material-Icons-Outline.woff2) format('woff2'),
+    url(../bin/Outline/Material-Icons-Outline.woff) format('woff'),
+    url(../bin/Outline/Material-Icons-Outline.svg) format('svg'),
+    url(../bin/Outline/Material-Icons-Outline.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Material Icons Round';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../bin/Round/Material-Icons-Round.eot); /* For IE6-8 */
+    src: local('Material-Icons-Round'),
+    url(../bin/Round/Material-Icons-Round.woff2) format('woff2'),
+    url(../bin/Round/Material-Icons-Round.woff) format('woff'),
+    url(../bin/Round/Material-Icons-Round.svg) format('svg'),
+    url(../bin/Round/Material-Icons-Round.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Material Icons Sharp';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../bin/Sharp/Material-Icons-Sharp.eot); /* For IE6-8 */
+    src: local('Material-Icons-Sharp'),
+    url(../bin/Sharp/Material-Icons-Sharp.woff2) format('woff2'),
+    url(../bin/Sharp/Material-Icons-Sharp.woff) format('woff'),
+    url(../bin/Sharp/Material-Icons-Sharp.svg) format('svg'),
+    url(../bin/Sharp/Material-Icons-Sharp.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../bin/Baseline/Material-Icons-Baseline.eot); /* For IE6-8 */
+    src: local('Material-Icons-Baseline'),
+    url(../bin/Baseline/Material-Icons-Baseline.woff2) format('woff2'),
+    url(../bin/Baseline/Material-Icons-Baseline.woff) format('woff'),
+    url(../bin/Baseline/Material-Icons-Baseline.svg) format('svg'),
+    url(../bin/Baseline/Material-Icons-Baseline.ttf) format('truetype');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
