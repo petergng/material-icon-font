@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
+    "command-line-args": "^5.0.2",
+    "command-line-usage": "^5.0.5",
     "file-system": "^2.2.2",
     "svg2ttf": "^4.1.0",
     "svgicons2svgfont": "^9.0.4",
@@ -17,7 +19,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "npm run build",
+    "build": "node makeMaterial.js --style=Baseline && node makeMaterial.js --style=Outline && node makeMaterial.js --style=Sharp && node makeMaterial.js --style=Round"
   },
   "repository": {
     "type": "git",

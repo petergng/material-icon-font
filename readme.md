@@ -18,9 +18,9 @@ https://nodejs.org/en/
 # making fonts
 1. Replace svgs located in res
 2. Navigate and make sure directory is in the root folder
-3. open makeMaterial and uncomment out the style variable you want to generate(i know this sucks for now)
-4. `node makeMaterial.js` in the terminal
-4. Bin will hold all generated assets
+3. `node makeMaterial.js  --style=(Baseline|Outline|Round|Sharp)` in the terminal to rebuild specific font style
+4. OR run `npm run build` to rebuild all four font styles.
+5. bin folder will hold all generated assets for the given style
 
 # using the font with [Angular Material <mat-icon>](https://material.angular.io/components/icon/overview)
 1. Install package via npm `npm i --save https://github.com/petergng/materialIconFont.git`
