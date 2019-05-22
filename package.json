@@ -7,9 +7,9 @@
     "lib": "lib"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2",
+    "cheerio": "^1.0.0-rc.3",
     "file-system": "^2.2.2",
-    "svg2ttf": "^4.1.0",
+    "svg2ttf": "^4.2.0",
     "svgicons2svgfont": "^9.0.4",
     "ttf2eot": "^2.0.0",
     "ttf2woff": "^2.0.1",
@@ -17,7 +17,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node makeMaterial.js"
   },
   "repository": {
     "type": "git",
